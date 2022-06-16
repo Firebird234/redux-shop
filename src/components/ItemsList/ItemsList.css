@@ -1,0 +1,18 @@
+.itemsList {
+    display: flex;
+    margin: auto;
+    background: #f6f6f6;
+    padding: 20px;
+    justify-content: space-between;
+    min-height: calc(100vh - 150px);
+
+}
+
+.itemsList__container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    gap: 10px;
+}
+

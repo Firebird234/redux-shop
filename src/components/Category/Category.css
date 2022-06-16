@@ -1,0 +1,18 @@
+.category {
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.category:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.category__name {
+}

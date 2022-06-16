@@ -1,0 +1,20 @@
+.header {
+    background-color: #fc8507;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 0;
+}
+
+.header__geo {
+    width: 20px;
+    height: 20px;
+}
+
+.header__container {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 32px
+}

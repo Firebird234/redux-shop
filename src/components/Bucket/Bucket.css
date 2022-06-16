@@ -1,0 +1,55 @@
+.bucket {
+  display: flex;
+  background-color: #f6f6f6;
+  flex-wrap: nowrap;
+  padding: 140px 10px 10px;
+  box-sizing: border-box;
+  position: relative;
+  height: 100vh;
+}
+
+.bucket__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  align-items: flex-start;
+  width: 75%;
+}
+
+.bucket__info {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  width: 100%;
+  align-self: flex-end;
+}
+
+.bucket__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  align-items: flex-start;
+  width: 30%;
+  position: fixed;
+  right: 15px;
+  top: 172px;
+}
+
+.bucket__order {
+  height: 44px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #ffa218;
+  color: white;
+}

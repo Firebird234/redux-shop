@@ -1,0 +1,13 @@
+.categories {
+  display: grid;
+  grid-template-rows: 280px;
+  grid-template-columns: repeat(4, 280px);
+  grid-auto-rows: repeat(auto-fit, 280px);
+  grid-auto-columns: repeat(auto-fit, 280px);
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px 0;
+}

@@ -1,0 +1,17 @@
+.leftBar {
+    display: flex;
+    flex-direction: column;
+    width: 222px;
+    background-color: #fff;
+    border-radius: 8px;
+    height: max-content;
+    padding: 20px 0;
+}
+
+.leftBar__item {
+    display: block;
+    text-decoration: none;
+    color: black;
+    line-height: 2.15;
+    cursor: pointer;
+}

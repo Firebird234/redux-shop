@@ -1,0 +1,103 @@
+.bucketItem {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.bucketItem__illustration {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.bucketItem__descr-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.bucketItem__price-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bucketItem__quantity {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.bucketItem__quantityAdd-button,
+.bucketItem__quantityDelete-button {
+  height: 19px;
+  width: 19px;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.bucketItem__quantityAdd-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 19px;
+  width: 1px;
+  background-color: #afafaf;
+}
+
+.bucketItem__quantityAdd-button span,
+.bucketItem__quantityDelete-button span {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin: auto;
+  height: 1px;
+  width: 19px;
+  background-color: #afafaf;
+}
+
+/* .bucketItem__buy-button:hover {
+        background-color: #ffa218;
+        color: white;
+
+} */
+
+.bucketItem__price {
+  color: #ffa218;
+  line-height: 26px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.bucketItem__delete {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  right: 26px;
+  top: 26px;
+  background-image: url(../../images/bucket.svg);
+  z-index: 50;
+}
