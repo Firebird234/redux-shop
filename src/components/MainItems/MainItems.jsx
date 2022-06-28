@@ -11,8 +11,7 @@ import "./MainItems.css";
 export function MainItems() {
   const items = useSelector((state) => state.allItems);
   const dispatch = useDispatch();
-  const [slider, setSlider] = useState(0);
-  const [pageWidth, setPageWidth] = useState();
+  const [renderedItems, setRenderedItems] = useState([]);
 
   useEffect(() => {
     const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
@@ -20,13 +19,17 @@ export function MainItems() {
     dispatch(getAllItems());
   }, []);
 
+  useEffect(() => {
+    setRenderedItems(items.slice(0, 8));
+  }, [items]);
+
   function onRightArr() {
-    const slided = [...items.slice(1), [...items].shift()];
+    const slided = [...renderedItems.slice(1), [...renderedItems].shift()];
     dispatch(slideItemAction(slided));
   }
 
   function onLeftArr() {
-    const slided = [[...items].pop(), ...items.slice(0, -1)];
+    const slided = [[...renderedItems].pop(), ...renderedItems.slice(0, -1)];
     dispatch(slideItemAction(slided));
   }
 
@@ -36,10 +39,12 @@ export function MainItems() {
         <span className="mainItems__left_arrow"></span>
         <span className="mainItems__left_arrow2"></span>
       </div>
-      <div className="mainItems__slider" style={{ transform: `translateX(${slider}px)` }}>
-        {items.slice(0, 10).map((el) => {
-          return (
+      <div className="mainItems__slider">
+        {renderedItems.slice(0, 10).map((el) => {
+          return el ? (
             <MainItem key={el.id} price={el.price} image={el.image} title={el.title} id={el.id} />
+          ) : (
+            ""
           );
         })}
       </div>
