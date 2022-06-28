@@ -1,6 +1,8 @@
 import React, { useDeferredValue, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { setToBuyAction } from "../../store";
+import { getItem } from "../../store/asyncAct/getItem";
 import "./Item.css";
 
 export function Item({ id, el, description, image, title, rating, price }) {
@@ -8,13 +10,17 @@ export function Item({ id, el, description, image, title, rating, price }) {
   const bucketLust = useSelector((state) => state.bucket);
   const dispatch = useDispatch();
 
-  // const [clicker, setClicker] = useState(true);
+  const redirect = useNavigate();
 
   function addToBucket(e) {
     if (!bucketLust.find((bucket) => el.id === bucket.id)) {
       dispatch(setToBuyAction([el]));
-      // setClicker(!clicker);
     }
+  }
+
+  function showItem() {
+    dispatch(getItem(id));
+    redirect(`/products/${id}`);
   }
 
   useEffect(() => {
@@ -23,9 +29,11 @@ export function Item({ id, el, description, image, title, rating, price }) {
 
   return (
     <div className="item" id={`${id}`}>
-      <img className="item__illustration" src={image} alt="" />
+      <img className="item__illustration" onClick={showItem} src={image} alt="" />
       <div className="item__descr-container">
-        <h2>{title}</h2>
+        <h2 className="item__title" onClick={showItem}>
+          {title}
+        </h2>
         <p>{description}</p>
         <span>Рейтинг: {rating}</span>
       </div>

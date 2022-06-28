@@ -11,19 +11,16 @@ export function LeftBar() {
 
   return (
     <div className="leftBar">
-      <a className="leftBar__item" onClick={() => redirect("/men's clothing")}>
+      <a className="leftBar__item" onClick={() => redirect("/categories/men's clothing")}>
         Мужская одежда
       </a>
-      <a
-        className="leftBar__item"
-        onClick={() => redirect("/women's clothing")}
-      >
+      <a className="leftBar__item" onClick={() => redirect("/categories/women's clothing")}>
         Женская одежда
       </a>
-      <a className="leftBar__item" onClick={() => redirect("/jewelery")}>
+      <a className="leftBar__item" onClick={() => redirect("/categories/jewelery")}>
         Ювелирные товары
       </a>
-      <a className="leftBar__item" onClick={() => redirect("/electronics")}>
+      <a className="leftBar__item" onClick={() => redirect("/categories/electronics")}>
         Электроника
       </a>
     </div>

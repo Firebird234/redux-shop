@@ -9,27 +9,25 @@ import { useNavigate } from "react-router-dom";
 
 export function SearchForm() {
   const navigate = useNavigate();
-  const [position, setPosition] = useState(false)
+  const [position, setPosition] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', handlePosition);
+    window.addEventListener("scroll", handlePosition);
     return () => {
-      window.removeEventListener('scroll', handlePosition);
-    }
-  })
+      window.removeEventListener("scroll", handlePosition);
+    };
+  });
 
   function handlePosition() {
-    window.scrollY > 32 ? setPosition(true) : setPosition(false)
+    window.scrollY > 32 ? setPosition(true) : setPosition(false);
   }
 
   function redirect() {
     navigate("/bucket");
   }
 
-
-
   return (
-    <section className={`searchForm ${position && 'searchForm_sticky'}`}>
+    <section className={`searchForm ${position && "searchForm_sticky"}`}>
       <a href="/">
         <img className="searchForm__logo" src={Logo} alt="Logo" />
       </a>
@@ -38,7 +36,7 @@ export function SearchForm() {
         <img className="searchForm__loopa" src={Loopa} alt="lopa" />
       </div>
 
-      <div className='searchForm__container'>
+      <div className="searchForm__container">
         <div className="searchForm__basket">
           <span className="searchForm__button" onClick={redirect}>
             Корзина

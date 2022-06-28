@@ -1,5 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { LeftBar } from "../LeftBar/LeftBar";
+import { MainItems } from "../MainItems/MainItems";
 import "./Main.css";
 
 export function Main() {
@@ -12,7 +14,8 @@ export function Main() {
           <div className="main__actions"></div>
         </div>
         <div className="main__items">
-          <span className="main__items-title">Товары</span>
+          <span className="main__items-title">Популярные товары</span>
+          <MainItems />
         </div>
       </div>
     </section>

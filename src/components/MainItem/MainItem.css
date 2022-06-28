@@ -1,0 +1,32 @@
+.mainItem {
+  min-width: 330px;
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.4s;
+}
+
+.mainItem__pic {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.mainItem__price {
+  font-weight: 700;
+}
+
+.mainItem__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mainItem__title {
+  max-width: 150px;
+  margin: 0;
+}

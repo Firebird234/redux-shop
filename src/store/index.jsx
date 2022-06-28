@@ -60,6 +60,33 @@ function categoriesReducer(state = [], action) {
   }
 }
 
+function allItemsReducer(state = [], action) {
+  switch (action.type) {
+    case "GET__ALL":
+      return action.payload;
+    case "SLIDE__ALL":
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+const defaultItem = { title: "", rating: { rate: "" }, description: "", image: "", price: "" };
+
+function itemReducer(state = defaultItem, action) {
+  switch (action.type) {
+    case "GET_ITEM":
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+export const getAllItemsAction = (paylod) => ({
+  type: "GET__ALL",
+  payload: paylod,
+});
+
 export const getItemsAction = (items) => ({
   type: "GET_ITEMS",
   payload: items,
@@ -90,10 +117,27 @@ export const getCategoriesAction = (paylod) => ({
   payload: paylod,
 });
 
+export const resetStateAction = (paylod) => ({
+  type: "RESET__STATE",
+  payload: paylod,
+});
+
+export const getItemAction = (paylod) => ({
+  type: "GET_ITEM",
+  payload: paylod,
+});
+
+export const slideItemAction = (paylod) => ({
+  type: "SLIDE__ALL",
+  payload: paylod,
+});
+
 const rootReducer = combineReducers({
   items: goodsReducer,
   bucket: bucketReducer,
   categories: categoriesReducer,
+  item: itemReducer,
+  allItems: allItemsReducer,
 });
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

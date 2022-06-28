@@ -17,6 +17,7 @@ import { Bucket } from "./components/Bucket/Bucket";
 import { countBucket } from "./functions/countBucket";
 import { EmptyBucket } from "./components/EmptyBucket/EmptyBucket";
 import { Categories } from "./components/Categories/Categories";
+import { ItemPage } from "./components/ItemPage/ItemPage";
 
 function App() {
   const bucketList = useSelector((state) => state.bucket);
@@ -66,12 +67,24 @@ function App() {
         />
 
         <Route
-          path="/:category"
+          path="/categories/:category"
           element={
             <>
               <Header />
               <SearchForm />
               <ItemsList />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/products/:id"
+          element={
+            <>
+              <Header />
+              <SearchForm />
+              <ItemPage />
               <Footer />
             </>
           }
