@@ -6,12 +6,19 @@ import "./ItemsList.css";
 import { LeftBar } from "../LeftBar/LeftBar";
 import { getGoods } from "../../store/asyncAct/goods";
 import { useParams } from "react-router-dom";
+import { resetItemsAction } from "../../store";
 
 export function ItemsList() {
   const items = useSelector((state) => state.items);
   const dispatch = useDispatch();
   let { category } = useParams();
   useEffect(() => dispatch(getGoods(category)), [category]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetItemsAction());
+    };
+  }, []);
 
   return (
     <section className="itemsList">
@@ -28,7 +35,7 @@ export function ItemsList() {
           </h2>
         ) : (
           items.map((el) => {
-            el.quantity = 1
+            el.quantity = 1;
             return (
               <Item
                 el={el}
@@ -39,7 +46,7 @@ export function ItemsList() {
                 title={el.title}
                 rating={el.rating.rate}
                 price={el.price}
-                quantity = {el.quantity}
+                quantity={el.quantity}
               />
             );
           })

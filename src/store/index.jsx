@@ -6,6 +6,8 @@ function goodsReducer(state = [], action) {
   switch (action.type) {
     case "GET_ITEMS":
       return action.payload;
+    case "RESET":
+      return [];
     default:
       return state;
   }
@@ -81,6 +83,11 @@ function itemReducer(state = defaultItem, action) {
       return state;
   }
 }
+
+export const resetItemsAction = (paylod) => ({
+  type: "RESET",
+  payload: paylod,
+});
 
 export const getAllItemsAction = (paylod) => ({
   type: "GET__ALL",

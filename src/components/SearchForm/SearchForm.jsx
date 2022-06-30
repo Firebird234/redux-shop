@@ -6,8 +6,15 @@ import noLike from "../../images/noLike.png";
 import Basket from "../../images/Basket.svg";
 import Loopa from "../../images/Loopa.svg";
 import { useNavigate } from "react-router-dom";
+import useFormValidaion from "../../hooks/Validation";
 
 export function SearchForm() {
+  const { resetForm, values, errors, isValid, handleChange, setValues } = useFormValidaion();
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
+
   const navigate = useNavigate();
   const [position, setPosition] = useState(false);
 
@@ -32,7 +39,7 @@ export function SearchForm() {
         <img className="searchForm__logo" src={Logo} alt="Logo" />
       </a>
       <div className="searchForm__input-container">
-        <input className="searchForm__input" type="text" name="Search" />
+        <input className="searchForm__input" type="text" name="Search" onChange={handleChange} />
         <img className="searchForm__loopa" src={Loopa} alt="lopa" />
       </div>
 

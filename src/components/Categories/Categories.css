@@ -9,5 +9,7 @@
   justify-items: center;
   justify-content: center;
   margin: auto;
-  padding: 20px 0;
+  padding: 70px 0 0;
+  height: 80vh;
+  background-color: #f6f6f6;
 }

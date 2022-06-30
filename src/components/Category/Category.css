@@ -8,6 +8,7 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.5s;
+  background-color: white;
 }
 
 .category:hover {
