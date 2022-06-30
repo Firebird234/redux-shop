@@ -25,7 +25,11 @@ function App() {
 
   useEffect(() => {
     let bucketCash = JSON.parse(localStorage.getItem("bucket")) || [];
-    bucketCash.length !== 0 && dispatch(setToBuyAction(bucketCash));
+    bucketCash.length !== 0 &&
+      bucketCash.forEach((el) => {
+        el.key = el.id;
+        dispatch(setToBuyAction(el));
+      });
   }, []);
 
   return (

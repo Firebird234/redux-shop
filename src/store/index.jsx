@@ -16,7 +16,12 @@ function goodsReducer(state = [], action) {
 function bucketReducer(state = [], action) {
   switch (action.type) {
     case "SET_TO_BUY":
-      return [...state, ...action.payload];
+      if (state.some((el) => el.id === action.payload.id)) {
+        return state;
+      } else {
+        return [...state, action.payload];
+      }
+    // return [...state, ...action.payload];
     case "ADD__QUANTITY":
       return [
         ...state.map((el) => {
@@ -78,6 +83,7 @@ const defaultItem = { title: "", rating: { rate: "" }, description: "", image: "
 function itemReducer(state = defaultItem, action) {
   switch (action.type) {
     case "GET_ITEM":
+      action.payload.quantity = 1;
       return action.payload;
     default:
       return state;

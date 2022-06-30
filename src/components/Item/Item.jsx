@@ -14,7 +14,7 @@ export function Item({ id, el, description, image, title, rating, price }) {
 
   function addToBucket(e) {
     if (!bucketLust.find((bucket) => el.id === bucket.id)) {
-      dispatch(setToBuyAction([el]));
+      dispatch(setToBuyAction(el));
     }
   }
 
