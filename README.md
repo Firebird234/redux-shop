@@ -40,3 +40,7 @@
 1. Клонировать репозиторий git clone https://github.com/Firebird234/redux-shop.git.
 2. Установить все зависимости npm install.
 3. Запустить проект npm start.
+
+### Демо:
+
+https://redux-shop-nine.vercel.app/
