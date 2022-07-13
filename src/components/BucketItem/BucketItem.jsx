@@ -1,6 +1,6 @@
 import React, { useDeferredValue, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addQuantity, decreaseQuantity, deleteItem, setToBuyAction } from "../../store";
+import { addQuantity, decreaseQuantity, deleteItem, setToBuyAction } from "../../store/bucket";
 import "./BucketItem.css";
 import bucket from "../../images/bucket.svg";
 

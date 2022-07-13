@@ -1,4 +1,4 @@
-import { getItemAction } from "..";
+import { getItemAction } from "../currentItem";
 import { GetItem } from "../../utils/Api";
 
 export function getItem(id) {

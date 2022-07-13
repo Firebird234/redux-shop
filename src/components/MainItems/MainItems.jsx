@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetStateAction, slideItemAction } from "../../store";
+import { resetStateAction, slideItemAction } from "../../store/allItems";
 import { getGoods } from "../../store/asyncAct/goods";
 import { getAllItems } from "../../store/asyncAct/products";
 import { MainItem } from "../MainItem/MainItem";

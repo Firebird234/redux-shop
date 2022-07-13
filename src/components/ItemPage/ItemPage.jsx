@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import "./ItemPage.css";
 import { getItem } from "../../store/asyncAct/getItem";
-import { setToBuyAction } from "../../store";
+import { setToBuyAction } from "../../store/bucket";
 
 export function ItemPage() {
   const item = useSelector((state) => state.item);

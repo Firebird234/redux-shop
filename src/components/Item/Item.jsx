@@ -1,7 +1,7 @@
 import React, { useDeferredValue, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setToBuyAction } from "../../store";
+import { setToBuyAction } from "../../store/bucket";
 import { getItem } from "../../store/asyncAct/getItem";
 import "./Item.css";
 

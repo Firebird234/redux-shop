@@ -6,7 +6,7 @@ import "./ItemsList.css";
 import { LeftBar } from "../LeftBar/LeftBar";
 import { getGoods } from "../../store/asyncAct/goods";
 import { useParams } from "react-router-dom";
-import { resetItemsAction } from "../../store";
+import { resetItemsAction } from "../../store/sortedItems";
 
 export function ItemsList() {
   const items = useSelector((state) => state.items);

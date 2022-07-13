@@ -1,4 +1,4 @@
-import { getAllItemsAction, getItemsAction } from "..";
+import { getAllItemsAction, getItemsAction } from "../allItems";
 import { GetAllItems, GetCategories, GetItems } from "../../utils/Api";
 
 export function getAllItems() {

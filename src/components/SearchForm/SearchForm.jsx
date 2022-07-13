@@ -11,10 +11,6 @@ import useFormValidaion from "../../hooks/Validation";
 export function SearchForm() {
   const { resetForm, values, errors, isValid, handleChange, setValues } = useFormValidaion();
 
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
-
   const navigate = useNavigate();
   const [position, setPosition] = useState(false);
 
@@ -35,7 +31,7 @@ export function SearchForm() {
 
   return (
     <section className={`searchForm ${position && "searchForm_sticky"}`}>
-      <a href="/">
+      <a href="#" onClick={() => navigate("/main")}>
         <img className="searchForm__logo" src={Logo} alt="Logo" />
       </a>
       <div className="searchForm__input-container">

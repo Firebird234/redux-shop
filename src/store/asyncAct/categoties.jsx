@@ -1,4 +1,4 @@
-import { getCategoriesAction } from "..";
+import { getCategoriesAction } from "../categories";
 import { GetCategories } from "../../utils/Api";
 
 export function getCategories() {
