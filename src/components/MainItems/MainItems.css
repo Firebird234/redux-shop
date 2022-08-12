@@ -10,6 +10,7 @@
   height: 100%;
   display: flex;
   position: relative;
+  transition: all 1s;
 }
 
 .mainItems__left {

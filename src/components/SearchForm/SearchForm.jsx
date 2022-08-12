@@ -7,9 +7,11 @@ import Basket from "../../images/Basket.svg";
 import Loopa from "../../images/Loopa.svg";
 import { useNavigate } from "react-router-dom";
 import useFormValidaion from "../../hooks/Validation";
+import { useDispatch, useSelector } from "react-redux";
 
-export function SearchForm() {
+export function SearchForm({ setRenderedItems }) {
   const { resetForm, values, errors, isValid, handleChange, setValues } = useFormValidaion();
+  const items = useSelector((state) => state.allItems);
 
   const navigate = useNavigate();
   const [position, setPosition] = useState(false);
@@ -29,8 +31,23 @@ export function SearchForm() {
     navigate("/bucket");
   }
 
+  function handleSearch(e) {
+    e.preventDefault();
+    navigate("/search");
+    let searchCards = items.filter((el) => {
+      console.log(el);
+      return el.title.toLowerCase().includes(values["Search"].trim().toLowerCase());
+    });
+    console.log(items);
+    setRenderedItems(searchCards);
+  }
+
+  function handleSignIn() {
+    navigate("/login");
+  }
+
   return (
-    <section className={`searchForm ${position && "searchForm_sticky"}`}>
+    <form onSubmit={handleSearch} className={`searchForm ${position && "searchForm_sticky"}`}>
       <a href="#" onClick={() => navigate("/main")}>
         <img className="searchForm__logo" src={Logo} alt="Logo" />
       </a>
@@ -46,7 +63,7 @@ export function SearchForm() {
           </span>
           <img className="searchForm__img" src={Basket} alt="Busket" />
         </div>
-        <button className="searchForm__signIn" type="button">
+        <button className="searchForm__signIn" onClick={handleSignIn} type="button">
           Войти
         </button>
         <div className="searchForm__chosen">
@@ -54,6 +71,6 @@ export function SearchForm() {
           <img className="searchForm__like" src={noLike} alt="like button" />
         </div>
       </div>
-    </section>
+    </form>
   );
 }

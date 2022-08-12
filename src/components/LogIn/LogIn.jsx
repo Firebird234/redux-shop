@@ -29,6 +29,10 @@ function LogIn() {
     navigate("/register");
   }
 
+  function handleNoRegisterClick() {
+    navigate("/main");
+  }
+
   React.useEffect(() => {
     setValues({});
   }, []);
@@ -80,6 +84,14 @@ function LogIn() {
           Регистрация
         </button>
       </div>
+      <button
+        style={{ textDecoration: "underline" }}
+        onClick={handleNoRegisterClick}
+        type="button"
+        className="logIn__signIn"
+      >
+        Продолжить без регистрации
+      </button>
     </form>
   );
 }

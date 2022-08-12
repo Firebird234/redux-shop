@@ -2,17 +2,19 @@ import React, { useContext, useEffect } from "react";
 import { MeContext } from "../../contexts/MeContext";
 import { Item } from "../Item/Item";
 import { useDispatch, useSelector } from "react-redux";
-import "./ItemsList.css";
+import "./SerchList.css";
 import { LeftBar } from "../LeftBar/LeftBar";
 import { getGoods } from "../../store/asyncAct/goods";
 import { useParams } from "react-router-dom";
 import { resetItemsAction } from "../../store/sortedItems";
 import { loadingAction, notLoadingtAction } from "../../store/loading";
+import { useState } from "react";
 
-export function ItemsList() {
+export function SerchList({ renderedItems }) {
   const items = useSelector((state) => state.items);
   const dispatch = useDispatch();
   let { category } = useParams();
+
   useEffect(() => {
     dispatch(getGoods(category));
   }, [category]);
@@ -24,10 +26,10 @@ export function ItemsList() {
   }, []);
 
   return (
-    <section className="itemsList">
+    <section className="SerchList">
       <LeftBar />
-      <div className="itemsList__container">
-        {items.map((el) => {
+      <div className="SerchList__container">
+        {renderedItems.map((el) => {
           el.quantity = 1;
           return (
             <Item
