@@ -37,9 +37,9 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    loggedIn && navigate("/main");
-  }, [loggedIn]);
+  // useEffect(() => {
+  //   loggedIn && navigate("/main");
+  // }, [loggedIn]);
 
   return (
     <div className="App">
