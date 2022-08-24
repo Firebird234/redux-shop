@@ -1,6 +1,6 @@
 .footer {
     background-color: #333;
-
+    padding-top: 20px;
 }
 
 .footer__container {
@@ -19,6 +19,7 @@
 
 }
 .footer__adress-link{
+    margin-top: 20px;
     font-size: 14px;
     text-decoration: none;
     color: white;
@@ -32,7 +33,7 @@
     text-align: left;
     color: #999;
     font-size: 14px;
-
+    margin-top: 20px;
 }
 
 .footer__contacts {

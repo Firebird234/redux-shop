@@ -19,7 +19,6 @@ export function Header() {
 
       <div className="header__container">
         <span>8-800-555-35-35</span>
-        <span></span>
       </div>
     </header>
   );

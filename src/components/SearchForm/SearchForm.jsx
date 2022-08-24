@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 export function SearchForm({ setRenderedItems }) {
   const { resetForm, values, errors, isValid, handleChange, setValues } = useFormValidaion();
   const items = useSelector((state) => state.allItems);
+  const loggedIn = useSelector((state) => state.loggedIn);
 
   const navigate = useNavigate();
   const [position, setPosition] = useState(false);
@@ -57,6 +58,7 @@ export function SearchForm({ setRenderedItems }) {
       </div>
 
       <div className="searchForm__container">
+        {loggedIn && <div>ЗАДАЧИ</div>}
         <div className="searchForm__basket">
           <span className="searchForm__button" onClick={redirect}>
             Корзина

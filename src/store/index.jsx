@@ -8,6 +8,7 @@ import { itemReducer } from "./currentItem";
 import { goodsReducer } from "./sortedItems";
 import { loggedInReducer } from "./loggedIn";
 import { loadingReducer } from "./loading";
+import { bucketPopupReducer } from "./bucketPopup";
 
 const rootReducer = combineReducers({
   items: goodsReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   allItems: allItemsReducer,
   loggedIn: loggedInReducer,
   loading: loadingReducer,
+  bucketPopup: bucketPopupReducer,
 });
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

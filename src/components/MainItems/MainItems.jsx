@@ -13,7 +13,13 @@ export function MainItems() {
   const dispatch = useDispatch();
   const [renderedItems, setRenderedItems] = useState([]);
 
-  const [slideLength, setSlideLength] = useState(330);
+  // NN
+  const [slidesQuantity, setSlidesQuantity] = useState(10);
+  const [initialSllde, setInitialSllde] = useState(330);
+  const [slideTransition, setSlideTransition] = useState(1);
+  // NN
+
+  const [slideLength, setSlideLength] = useState(0);
 
   useEffect(() => {
     const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
@@ -22,7 +28,7 @@ export function MainItems() {
   }, []);
 
   useEffect(() => {
-    setRenderedItems(items.slice(0, 8));
+    setRenderedItems(items.slice(0, slidesQuantity));
   }, [items]);
 
   function onRightArr() {
@@ -30,14 +36,13 @@ export function MainItems() {
     dispatch(slideItemAction(slided));
   }
 
+  //NN
+  useEffect(() => {}, [slideLength]);
+
+  //NN
+
   function onLeftArr() {
-    const slided = [[...renderedItems].pop(), ...renderedItems.slice(0, -1)];
-    dispatch(slideItemAction(slided));
-    // const slided = [...renderedItems.slice(0, -1)];
-    // dispatch(slideItemAction(slided));
-    // setSlideLength((prev) => prev + 330);
-    // const slided2 = [[...renderedItems].pop(), ...renderedItems.slice(0)];
-    // dispatch(slideItemAction(slided2));
+    setSlideLength((prev) => prev - initialSllde);
   }
 
   return (
@@ -46,8 +51,11 @@ export function MainItems() {
         <span className="mainItems__left_arrow"></span>
         <span className="mainItems__left_arrow2"></span>
       </div>
-      <div className="mainItems__slider">
-        {renderedItems.slice(0, 10).map((el) => {
+      <div
+        className="mainItems__slider"
+        style={{ transform: `translateX(${slideLength}px)`, transition: `all ${slideTransition}s` }}
+      >
+        {renderedItems.map((el) => {
           return el ? (
             <MainItem key={el.id} price={el.price} image={el.image} title={el.title} id={el.id} />
           ) : (

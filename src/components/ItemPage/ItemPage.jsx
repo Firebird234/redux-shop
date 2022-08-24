@@ -6,6 +6,7 @@ import { useState } from "react";
 import "./ItemPage.css";
 import { getItem } from "../../store/asyncAct/getItem";
 import { setToBuyAction } from "../../store/bucket";
+import { popupActive, popupDisabled } from "../../store/bucketPopup";
 
 export function ItemPage() {
   const item = useSelector((state) => state.item);
@@ -17,6 +18,15 @@ export function ItemPage() {
     if (!bucketLust.find((bucket) => item.id === bucket.id)) {
       dispatch(setToBuyAction(item));
     }
+
+    handleBuy();
+  }
+
+  function handleBuy() {
+    dispatch(popupActive(true));
+    setTimeout(() => {
+      dispatch(popupDisabled(false));
+    }, 1000);
   }
 
   useEffect(() => {

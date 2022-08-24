@@ -18,6 +18,10 @@ import LogIn from "./components/LogIn/LogIn";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Loader from "./components/Loader/Loader";
 import { SerchList } from "./components/SerchList/SerchList";
+import { popupActive, popupDisabled } from "./store/bucketPopup";
+import { BucketPopup } from "./components/BucketPopup/BucketPopup";
+import { Admin } from "./components/Admin/Admin";
+import { loggedInAction } from "./store/loggedIn";
 
 function App() {
   const bucketList = useSelector((state) => state.bucket);
@@ -30,6 +34,8 @@ function App() {
 
   useEffect(() => {
     let bucketCash = JSON.parse(localStorage.getItem("bucket")) || [];
+    // const auth = localStorage.getItem("LoggedIn");
+    // dispatch(loggedInAction(true));
     bucketCash.length !== 0 &&
       bucketCash.forEach((el) => {
         el.key = el.id;
@@ -37,13 +43,14 @@ function App() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   loggedIn && navigate("/main");
-  // }, [loggedIn]);
+  useEffect(() => {
+    localStorage.setItem("LoggedIn", loggedIn);
+  }, [loggedIn]);
 
   return (
     <div className="App">
       {loading && <Loader />}
+      <BucketPopup />
       <Routes>
         <Route
           path="/register"
@@ -134,10 +141,9 @@ function App() {
           }
         />
 
-        <Route
-          path="/"
-          element={<ProtectedRoute redirectTo="/login" loggedIn={loggedIn} />}
-        ></Route>
+        <Route path="/" element={<ProtectedRoute redirectTo="/login" loggedIn={loggedIn} />}>
+          <Route path="/admin" element={<Admin />}></Route>
+        </Route>
       </Routes>
       {/* <PopupWithForm /> */}
     </div>

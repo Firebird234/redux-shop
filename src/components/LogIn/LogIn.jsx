@@ -23,6 +23,7 @@ function LogIn() {
       dispatch(loggedInAction(loggedIn));
       setLoading(false);
     }, 3000);
+    navigate("/main");
   }
 
   function handleRegister() {

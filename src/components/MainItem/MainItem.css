@@ -30,3 +30,17 @@
   max-width: 150px;
   margin: 0;
 }
+
+@media screen and (max-width: 780px) {
+  .mainItem {
+    min-width: 250px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mainItem {
+    min-width: 200px;
+    height: 100%;
+  }
+}

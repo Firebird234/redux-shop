@@ -18,7 +18,6 @@
 .searchForm__input {
   position: relative;
   box-sizing: border-box;
-
   width: 100%;
   height: 44px;
   border-radius: 8px;
@@ -33,6 +32,7 @@
   align-items: center;
   margin: auto 26px;
   gap: 20px;
+  min-width: 400px;
 }
 
 .searchForm_sticky {
@@ -91,3 +91,12 @@
   border: 1px solid #d9d9d9;
   border-radius: 6px;
 }
+
+@media screen and (max-width: 1270px) {
+  .searchForm {
+    flex-wrap: wrap;}
+}
+
+/* @media screen and (max-width: 1180px) { 
+
+} */

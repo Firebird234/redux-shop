@@ -4,15 +4,14 @@
   background-color: #f6f6f6;
   padding: 30px 20px;
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 40px;
 }
 
 .main__container {
   display: flex;
   gap: 20px;
   flex-direction: column;
-  width: 1100px;
+  min-width: 1000px;
 }
 
 .main__job {
@@ -39,7 +38,7 @@
   margin-top: 40px;
   position: relative;
   background-color: white;
-  width: 90%;
+  width: 950px;
   height: 166px;
   border-radius: 8px;
 }
@@ -56,6 +55,112 @@
 
 .main__wrapper {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  gap: 50px;
+  width: 950px;
+}
+
+
+@media screen and (max-width: 1270px) {
+
+  .main {
+    padding-top: 50px;
+  }
+  .main__container {
+    min-width: 600px;}
+}
+
+@media screen and (max-width: 1270px) {
+
+  .main {
+height: 100%;
+    justify-content: start;
+  }
+
+  .main__wrapper {
+    align-items: center;
+    gap: 20px;
+   flex-direction: column;}
+
+   .main__job {
+     align-self: start;
+   }
+
+    .main__actions {
+      align-self: start;
+    }
+
+  .main__items {
+
+    width: 650px;
+
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .main__wrapper {
+    align-items: flex-end;
+    width: 100%;
+      }
+  .main__job {
+    position: relative;
+    width: 600px;
+    height: 200px;
+  order: 2}
+
+  .main__actions {
+position: relative;
+    right: 0px;
+  }
+
+  .main__container {
+    max-width: 500px;
+    min-width: 400px;}
+  .main__items {
+    position: absolute;
+    left: 200px;
+    top: 640px;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+  .main__items {
+    align-self: center;
+    width: 650px;
+    height: 166px;
+    left: 75px;
+  }
+
+  .main__job {
+    width: 500px;
+    height: 175px;
+    left: calc(50% - 250px);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .main__items {
+    align-self: center;
+    width: 500px;
+    height: 166px;
+    left: 75px;
+  }
+
+  .main__job {
+    position: absolute;
+    left: calc(50% - 400px);
+    top: 400px;
+    width: 500px;
+    height: 175px;
+    left: calc(50% - 250px);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .main__items {
+width: 400px;
+  }
 }

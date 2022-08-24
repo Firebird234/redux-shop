@@ -10,7 +10,7 @@
   height: 100%;
   display: flex;
   position: relative;
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 
 .mainItems__left {
@@ -99,4 +99,11 @@
 .mainItems__left:hover .mainItems__left_arrow2,
 .mainItems__left:hover > .mainItems__left_arrow {
   background-color: white;
+}
+
+
+@media screen and (max-width: 780px) {
+  .mainItems {
+    
+  }
 }
