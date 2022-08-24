@@ -8,7 +8,7 @@ import { itemReducer } from "./currentItem";
 import { goodsReducer } from "./sortedItems";
 import { loggedInReducer } from "./loggedIn";
 import { loadingReducer } from "./loading";
-import { bucketPopupReducer } from "./bucketPopup";
+import { bucketPopupReducer } from "../store/bucketPopup";
 
 const rootReducer = combineReducers({
   items: goodsReducer,
